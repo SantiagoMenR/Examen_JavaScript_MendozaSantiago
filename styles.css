@@ -9,7 +9,7 @@ body {
     margin: 0;
     background: linear-gradient(180deg, #91a4ff 0%, #4f8cff 100%);
     color: #222;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 h1 {
