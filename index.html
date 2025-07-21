@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BucaraEmprende</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+   
+    
+    <h1>Registro De Ferias Y Emprendimientos</h1>
+
+    <div id="loader" class="loader hidden">
+        <div class="spinner"></div>
+        <span class="loader-text">Cargando...</span>
+      </div>
+
+    <nav class="nav-responsive">
+      <div class="hamburger" id="hamburgerMenu" tabindex="0" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="btns nav-links" id="navLinks">
+        <button onclick="mostrarFormRegistro()">Registrar Feria</button>
+        <button onclick="mostrarFormEmprendimiento()">Registrar Emprendimiento</button>
+        <button onclick="mostrarFormServicio()">Registrar Servicio o Producto</button>
+        <button onclick="mostrarSeccionEventos()">Ver Lista de Eventos</button>
+      </div>
+    </nav>
+
+  <!-- Formulario para registrar eventos -->
+  <section class="hidden fade-section" id="formFeria">
+    <h2>Registrar Evento</h2>
+    <form id="formEvento">
+      <input type="text" id="nombreEvento" placeholder="Nombre del Evento" >
+      <label for="fechaInicio">Fecha de inicio</label>
+      <input type="date" id="fechaEventoInicio" name="fechaInicio">
+      <label for="fechaFin">Fecha de Fin</label>
+      <input type="date" id="fechaEventoFinal" name="fechaFin">
+      <label for="horaInicio">Hora de inicio</label>
+      <input type="time" id="horaInicio" >
+      <label for="horaFin">Hora final</label>
+      <input type="time" id="horaFin" >
+      <button type="submit">Registrar</button>
+    </form>
+  </section>
+
+  <!-- Formulario para registrar emprendimientos -->
+  <section class="hidden fade-section" id="formEmp">
+    <h2>Registrar Emprendimiento</h2>
+    <form id="formEmprendimiento">
+      <select id="eventoSelect"></select>
+      <input type="text" id="nombreEmprendimiento" placeholder="Nombre del Emprendimiento">
+      <input type="text" id="categoria" placeholder="Categoría">
+      <textarea id="descripcionEmp" placeholder="Descripción del Emprendimiento"></textarea>
+      <input type="text" id="enlace" placeholder="Enlace a Red Social">
+      <button type="submit">Agregar Emprendimiento</button>
+    </form>
+  </section>
+
+  <section class="hidden fade-section" id="formServ">
+    <h2>Registrar Servicio</h2>
+    <form id="formServicio">
+      <select id="eventoServicioSelect"></select>
+      <select id="emprendimientoServicioSelect"></select>
+      <input type="text" id="nombreServicio" placeholder="Nombre del Servicio o Producto">
+      <input type="number" id="precio" placeholder="Precio">
+      <textarea id="descripcionServicio" placeholder="Descripción del Servicio"></textarea>
+      <label for="foto">Foto del producto o servicio <i>(Opcional)</i></label>
+      <input type="file" name="foto" id="foto" accept="image/*">
+      <button type="submit">Agregar Servicio</button>
+    </form>
+  </section>
+
+  <!-- Mostrar eventos con sus equipos -->
+  <section class="hidden fade-section" id="listaEvents">
+    <h2>Eventos Registrados</h2>
+    <div id="listaEventos"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
